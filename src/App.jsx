@@ -75,7 +75,7 @@ export const App = () => {
         </button>
 
         <button
-          onClick={() => (isReverse ? setIsReverse(false) : setIsReverse(true))}
+          onClick={() => setIsReverse(!isReverse)}
           type="button"
           className={classNames('button is-warning ', {
             'is-light': !isReverse,
@@ -97,7 +97,9 @@ export const App = () => {
 
       <ul>
         {goods.map(good => (
-          <li data-cy="Good">{good}</li>
+          <li key={good} data-cy="Good">
+            {good}
+          </li>
         ))}
       </ul>
     </div>
